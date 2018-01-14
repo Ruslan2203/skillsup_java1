@@ -12,7 +12,7 @@ public class SocialServiceApp {
     }
 
     public void run(){
-        List<Post> posts = new ArrayList<>();
+        List<Post> posts = new ArrayList<Post>();
         for (PostProvider provider : providers) {
             posts.addAll(provider.getPosts());
         }
