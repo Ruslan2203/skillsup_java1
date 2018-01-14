@@ -1,12 +1,12 @@
 package ua.dp.skillsup.tdd;
 
 import org.springframework.beans.factory.InitializingBean;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class FeeService implements InitializingBean{
 
     private HolidayService holidayService;
     private WorkingService workingService;
+    private WeekendService weekendService;
 
     private double fee;
 
@@ -37,7 +37,15 @@ public class FeeService implements InitializingBean{
         this.workingService = workingService;
     }
 
+    public FeeService(WeekendService weekendService) {
+        fee = 0.015;
+        this.weekendService = weekendService;
+    }
+
+
+
     public double getFee(double paymentAmount) {
+
         return fee;
     }
 
