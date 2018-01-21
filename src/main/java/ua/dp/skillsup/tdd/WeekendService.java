@@ -7,24 +7,18 @@ import java.util.Calendar;
 
 public class WeekendService {
 
-    Calendar calendar = Calendar.getInstance();
-    int day = calendar.get(Calendar.DAY_OF_WEEK);
+    LocalDate localDate;
 
-    public WeekendService() {
-        this.day = day;
+    public WeekendService(LocalDate localDate) {
+        this.localDate = localDate;
     }
-
-    public WeekendService(int day){
-        this.day=day;
-    }
-
-    public boolean isWorking(){
-        if ((day==calendar.get(Calendar.SATURDAY))||day==calendar.get(Calendar.SUNDAY))
+    public boolean isWeekend(){
+        if (localDate.getDayOfWeek()==DayOfWeek.SATURDAY||
+                localDate.getDayOfWeek()==DayOfWeek.SUNDAY)
             return true;
 
         else  return false;
     }
-
 
 
 }

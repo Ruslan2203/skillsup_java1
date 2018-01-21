@@ -28,9 +28,10 @@ public class FeeService implements InitializingBean{
     public FeeService() {
     }
 
-    public FeeService(HolidayService holidayService) {
-
+    public FeeService(HolidayService holidayService, WorkingService workingService) {
+        fee = 0.015;
         this.holidayService = holidayService;
+        this.workingService = workingService;
     }
     public FeeService(WorkingService workingService) {
         fee = 0.01;
