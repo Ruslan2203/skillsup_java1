@@ -1,14 +1,17 @@
 package ua.dp.skillsup.spring.homework;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class SocialServiceApp {
     List<PostProvider> providers;
 
     public static void main(String[] args) {
         //todo instantiate App with spring
-        new SocialServiceApp().run();
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("socialApplicationContext.xml");
     }
 
     public void run(){
