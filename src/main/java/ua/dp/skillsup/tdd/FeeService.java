@@ -28,11 +28,7 @@ public class FeeService implements InitializingBean{
     public FeeService() {
     }
 
-    public FeeService(HolidayService holidayService, WorkingService workingService) {
-        fee = 0.015;
-        this.holidayService = holidayService;
-        this.workingService = workingService;
-    }
+
     public FeeService(WorkingService workingService) {
         fee = 0.01;
         this.workingService = workingService;
@@ -43,7 +39,17 @@ public class FeeService implements InitializingBean{
         this.weekendService = weekendService;
     }
 
+    public FeeService(HolidayService holidayService, WorkingService workingService) {
+        fee = 0.015;
+        this.holidayService = holidayService;
+        this.workingService = workingService;
+    }
+    public FeeService(HolidayService holidayService, WeekendService weekendService){
+        fee =0.02;
+        this.holidayService = holidayService;
+        this.weekendService = weekendService;
 
+    }
 
     public double getFee(double paymentAmount) {
 
