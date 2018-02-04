@@ -10,11 +10,20 @@ public class InstagramApi implements ServiceApi{
     private String appSecret;
 
     public void setAppName(String appName) {
+        this.appName=appName;
 
     }
 
     public void setAppSecret(String appSecret) {
+        this.appSecret=appSecret;
+    }
 
+    public String getAppName() {
+        return appName;
+    }
+
+    public String getAppSecret() {
+        return appSecret;
     }
 
     @Override

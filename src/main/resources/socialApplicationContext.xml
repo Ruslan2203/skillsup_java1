@@ -20,22 +20,22 @@
     </bean>
     <bean id="twitterApi" class="ua.dp.skillsup.spring.homework.service.TwitterApi">
         <property name="username" value="${username}" ></property>
-        <property name="password" value="${Sq1VeYqKOvv}"></property>
+        <property name="password" value="${password}"></property>
     </bean>
 
 
     <bean id="facebookProvider" class="ua.dp.skillsup.spring.homework.PostProvider">
-        <property name="fecebookServiceApi" ref="facebookApi"></property>
+        <property name="serviceApi" ref="facebookApi"></property>
         <property name="postFilter" ref="postFilter"></property>
         <property name="keyWord" value="${keyWord}"></property>
     </bean>
     <bean id="instagramProvider" class="ua.dp.skillsup.spring.homework.PostProvider">
-        <property name="instagramServiceApi" ref="instagramApi"></property>
+        <property name="serviceApi" ref="instagramApi"></property>
         <property name="postFilter" ref="postFilter"></property>
         <property name="keyWord" value="${keyWord}"></property>
     </bean>
     <bean id="twitterProvider" class="ua.dp.skillsup.spring.homework.PostProvider">
-        <property name="twitterServiceApi" ref="twitterApi"></property>
+        <property name="serviceApi" ref="twitterApi"></property>
         <property name="postFilter" ref="postFilter"></property>
         <property name="keyWord" value="${keyWord}"></property>
     </bean>

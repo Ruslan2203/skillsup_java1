@@ -10,9 +10,15 @@ public class SocialServiceApp {
 
     public static void main(String[] args) {
         //todo instantiate App with spring
+
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("socialApplicationContext.xml");
+        SocialServiceApp socialServiceApp = (SocialServiceApp)context.getBean("socialServiceApp");
+        socialServiceApp.run();
     }
+
+
+
 
     public void run(){
         List<Post> posts = new ArrayList<>();
@@ -23,5 +29,10 @@ public class SocialServiceApp {
         for (Post post : posts) {
             System.out.println(post);
         }
+    }
+    public void setProviders (List providers){
+        this.providers=providers;}
+    public List<PostProvider> getProviders(){
+        return providers;
     }
 }

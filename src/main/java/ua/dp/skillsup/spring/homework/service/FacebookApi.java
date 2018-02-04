@@ -10,10 +10,19 @@ public class FacebookApi implements ServiceApi{
     private String secret;
 
     public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 
     public void setSecret(String secret) {
+        this.secret=secret;
+    }
 
+    public String getApiKey() {
+        return apiKey;
+    }
+
+    public String getSecret() {
+        return secret;
     }
 
     @Override
