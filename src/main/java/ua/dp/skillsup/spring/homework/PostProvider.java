@@ -9,7 +9,19 @@ public class PostProvider {
     private PostFilter postFilter;
     private String keyWord;
 
+    public void setServiceApi(ServiceApi serviceApi) {
+
+    }
+    public void setPostFilter(PostFilter postFilter){
+
+    }
+    public void setKeyWord(String keyWord){
+
+    }
+
+
     public List<Post> getPosts(){
         return postFilter.filterByKeyword(serviceApi.getPosts(), keyWord);
     }
+
 }

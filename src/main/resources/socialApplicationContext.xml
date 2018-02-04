@@ -6,3 +6,48 @@
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:property-placeholder location="classpath:socialApplicaton.propertis"/>
+
+    <bean id="postFilter" class="ua.dp.skillsup.spring.homework.PostFilter"></bean>
+    <bean id="facebookApi" class="ua.dp.skillsup.spring.homework.service.FacebookApi">
+        <property name="apiKey" value="${apiKey}"></property>
+        <property name="secret" value="${secret}"></property>
+    </bean>
+    <bean id="instagramApi" class="ua.dp.skillsup.spring.homework.service.InstagramApi">
+        <property name="appName" value="${appName}"></property>
+        <property name="appSecret" value="${appSecret}"></property>
+    </bean>
+    <bean id="twitterApi" class="ua.dp.skillsup.spring.homework.service.TwitterApi">
+        <property name="username" value="${username}" ></property>
+        <property name="password" value="${Sq1VeYqKOvv}"></property>
+    </bean>
+
+
+    <bean id="facebookProvider" class="ua.dp.skillsup.spring.homework.PostProvider">
+        <property name="fecebookServiceApi" ref="facebookApi"></property>
+        <property name="postFilter" ref="postFilter"></property>
+        <property name="keyWord" value="${keyWord}"></property>
+    </bean>
+    <bean id="instagramProvider" class="ua.dp.skillsup.spring.homework.PostProvider">
+        <property name="instagramServiceApi" ref="instagramApi"></property>
+        <property name="postFilter" ref="postFilter"></property>
+        <property name="keyWord" value="${keyWord}"></property>
+    </bean>
+    <bean id="twitterProvider" class="ua.dp.skillsup.spring.homework.PostProvider">
+        <property name="twitterServiceApi" ref="twitterApi"></property>
+        <property name="postFilter" ref="postFilter"></property>
+        <property name="keyWord" value="${keyWord}"></property>
+    </bean>
+
+    <bean id="socialServiceApp" class="ua.dp.skillsup.spring.homework.SocialServiceApp">
+        <property name="providers">
+            <list>
+                <ref bean="facebookProvider"/>
+                <ref bean="instagramProvider"/>
+                <ref bean="twitterProvider"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

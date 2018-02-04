@@ -9,6 +9,13 @@ public class FacebookApi implements ServiceApi{
     private String apiKey;
     private String secret;
 
+    public void setApiKey(String apiKey) {
+    }
+
+    public void setSecret(String secret) {
+
+    }
+
     @Override
     public List<Post> getPosts() {
         System.out.println("Reading posts from Facebook with following credentials: " + apiKey + "/" + secret);

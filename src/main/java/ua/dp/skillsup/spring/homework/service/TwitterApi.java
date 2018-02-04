@@ -9,6 +9,14 @@ public class TwitterApi implements ServiceApi{
     private String username;
     private String password;
 
+    public void setUsername(String username) {
+
+    }
+
+    public void setPassword(String password) {
+
+    }
+
     @Override
     public List<Post> getPosts() {
         System.out.println("Reading posts from Twitter with following credentials: " + username + "/" + password);

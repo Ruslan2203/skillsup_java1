@@ -9,6 +9,14 @@ public class InstagramApi implements ServiceApi{
     private String appName;
     private String appSecret;
 
+    public void setAppName(String appName) {
+
+    }
+
+    public void setAppSecret(String appSecret) {
+
+    }
+
     @Override
     public List<Post> getPosts() {
         System.out.println("Reading posts from Instagram with following credentials: " + appName + "/" + appSecret);
