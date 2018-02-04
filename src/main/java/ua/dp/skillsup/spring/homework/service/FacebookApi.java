@@ -1,12 +1,19 @@
 package ua.dp.skillsup.spring.homework.service;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 import ua.dp.skillsup.spring.homework.Post;
 
 import java.util.Arrays;
 import java.util.List;
-
+@Component
 public class FacebookApi implements ServiceApi{
+    @Autowired
+    @Value("$apiKey")
     private String apiKey;
+    @Autowired
+    @Value("$secret")
     private String secret;
 
     public void setApiKey(String apiKey) {

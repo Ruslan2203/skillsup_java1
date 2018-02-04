@@ -1,12 +1,19 @@
 package ua.dp.skillsup.spring.homework.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import ua.dp.skillsup.spring.homework.Post;
 
 import java.util.Arrays;
 import java.util.List;
-
+@Component
 public class InstagramApi implements ServiceApi{
+    @Autowired
+    @Value("$appName")
     private String appName;
+    @Autowired
+    @Value("appSecret")
     private String appSecret;
 
     public void setAppName(String appName) {
